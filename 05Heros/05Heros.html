@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+<body class="bg-dark text-light" id="vapp">
+    <div class="container mt-4">
+        <h2 class="display-3">Single Hero</h2>
+        <select v-model="heroSelect" class="form-select">
+            <option selected value="">Choose a super hero</option>
+            <option>Iron Man</option>
+            <option>Thor</option>
+            <option>Hulk</option>
+        </select>
+        <h2 class="btn bg-warning mt-3">calling, {{heroSelect}}</h2>
+
+        <h2 class="display-3">Avenger Team</h2>
+        <select v-model="avengerSelect" multiple class="form-select">
+            <option selected value="">Choose multiple super hero</option>
+            <option value="Iron Man">Iron Man</option>
+            <option value="Thor">Thor</option>
+            <option value="Hulk">Hulk</option>
+            <option value="Peter Parker">Spider Man</option>
+        </select>
+        <h2 class="btn bg-warning mt-3">calling, {{avengerSelect}}</h2>
+
+        <h2 class="display-3">Bonds Team</h2>
+        <select v-model="myDynamic" class="form-select">
+            <option selected value="">Choose Bond...</option>
+            <option v-for="option in myBonds" :value="option.value">{{option.text}}</option>
+        </select>
+        <h2 class="btn bg-warning mt-3">calling, {{myDynamic}}</h2>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
